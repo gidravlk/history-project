@@ -1,0 +1,178 @@
+/* ==========================================================================
+   style.css — History of Kazakhstan course site
+   Mobile-first.
+   ========================================================================== */
+
+:root {
+  --ink: #241C14;
+  --ink-soft: #4A3C2C;
+  --paper: #EFE6D3;
+  --paper-raised: #F7F1E4;
+  --line: #CBB78E;
+  --gold: #A8781E;
+  --gold-deep: #8A6116;
+  --turquoise: #1E6E5C;
+  --turquoise-deep: #14503F;
+  --clay: #A2472A;
+  --cream-text: #FBF6EA;
+  --font-display: "Spectral", Georgia, "Times New Roman", serif;
+  --font-body: "IBM Plex Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  
+  --max-width: 1024px;
+  
+  --radius-s: 3px;
+  --radius-m: 6px;
+  --touch: 48px;
+  --space-1: 0.5rem;
+  --space-2: 0.875rem;
+  --space-3: 1.5rem;
+  --space-4: 2.25rem;
+  --space-5: 3.25rem;
+}
+
+* { box-sizing: border-box; }
+html { -webkit-text-size-adjust: 100%; }
+body {
+  margin: 0; background: var(--paper); color: var(--ink);
+  font-family: var(--font-body); font-size: 16px; line-height: 1.55;
+  -webkit-font-smoothing: antialiased;
+}
+img, svg { max-width: 100%; display: block; }
+h1, h2, h3 { font-family: var(--font-display); font-weight: 600; line-height: 1.2; margin: 0 0 var(--space-2); color: var(--ink); }
+p { margin: 0 0 var(--space-2); max-width: 34em; }
+a { color: var(--turquoise-deep); }
+button { font-family: inherit; }
+
+.shell { max-width: var(--max-width); margin: 0 auto; padding: 0 var(--space-3) var(--space-5); }
+.site-header { background: var(--ink); color: var(--cream-text); padding: var(--space-3) var(--space-3) var(--space-4); }
+.site-header__inner { max-width: var(--max-width); margin: 0 auto; }
+.site-header__course { font-size: 0.8rem; letter-spacing: 0.02em; color: var(--gold); margin: 0 0 0.4rem; }
+.site-header h1 { color: var(--cream-text); font-size: 1.6rem; margin: 0; }
+.site-header__sub { color: #CBB69A; margin: 0.6rem 0 0; font-size: 0.95rem; max-width: 30em; }
+.horizon { display: block; width: 100%; height: 28px; margin-top: var(--space-3); }
+
+.context-bar {
+  display: flex; flex-wrap: wrap; gap: var(--space-1) var(--space-3);
+  background: var(--paper-raised); border: 1px solid var(--line);
+  border-radius: var(--radius-m); padding: var(--space-2); margin: var(--space-3) 0; font-size: 0.9rem;
+}
+.context-bar dt { color: var(--ink-soft); margin: 0; font-size: 0.8rem; text-transform: uppercase; letter-spacing: 0.05em; }
+.context-bar dd { margin: 0.1rem 0 0; font-weight: 600; }
+.context-bar__item { min-width: 25%; }
+
+.btn {
+  display: inline-flex; align-items: center; justify-content: center; gap: 0.5rem;
+  min-height: var(--touch); padding: 0 1.3rem; border-radius: var(--radius-s);
+  border: 1px solid transparent; font-size: 1rem; font-weight: 600; cursor: pointer;
+  width: 100%; text-align: center; text-decoration: none; transition: transform 0.12s ease, background 0.12s ease;
+}
+.btn:active { transform: scale(0.98); }
+.btn:focus-visible { outline: 3px solid var(--turquoise); outline-offset: 2px; }
+.btn--primary { background: var(--gold); color: var(--ink); }
+.btn--primary:hover { background: var(--gold-deep); }
+.btn--secondary { background: transparent; color: var(--ink); border-color: var(--ink); }
+.btn--secondary:hover { background: var(--ink); color: var(--cream-text); }
+.btn--turquoise { background: var(--turquoise); color: var(--cream-text); }
+.btn--turquoise:hover { background: var(--turquoise-deep); }
+.btn--ghost { background: transparent; color: var(--turquoise-deep); border-color: var(--line); }
+
+.btn-row { display: flex; flex-direction: column; gap: var(--space-2); margin: var(--space-3) 0; }
+@media (min-width: 480px) {
+  .btn-row--pair { flex-direction: row; }
+  .btn-row--pair .btn { width: auto; flex: 1; }
+}
+
+.field-group { display: flex; flex-direction: column; gap: var(--space-2); }
+@media (min-width: 480px) { .field-group { flex-direction: row; } .field-group .field { flex: 1; } }
+
+.field { margin-bottom: var(--space-3); }
+.field label { display: block; font-weight: 600; margin-bottom: 0.4rem; font-size: 0.95rem; }
+.field input[type="text"], .field textarea, .form-select {
+  width: 100%; font-family: inherit; font-size: 1rem; padding: 0.8rem;
+  border: 1px solid var(--line); border-radius: var(--radius-s); background: var(--paper-raised); color: var(--ink);
+}
+.field input[type="text"]:focus, .field textarea:focus, .form-select:focus { outline: 3px solid var(--turquoise); outline-offset: 1px; }
+.field textarea { min-height: 220px; resize: vertical; line-height: 1.6; }
+.field__hint { font-size: 0.82rem; color: var(--ink-soft); margin-top: 0.35rem; }
+.field__count { font-size: 0.82rem; color: var(--ink-soft); text-align: right; margin-top: 0.3rem; }
+
+.topic-list { list-style: none; margin: 0; padding: 0; border-top: 1px solid var(--line); }
+.topic-item {
+  display: flex; align-items: flex-start; gap: var(--space-2); padding: var(--space-2) 0;
+  border-bottom: 1px solid var(--line); cursor: pointer; background: transparent; width: 100%;
+  text-align: left; border-left: none; border-right: none; border-top: none;
+}
+.topic-item__num { flex: 0 0 auto; font-family: var(--font-display); font-size: 1.05rem; color: var(--gold-deep); min-width: 2ch; padding-top: 0.1rem; }
+.topic-item__title { font-size: 0.98rem; }
+.topic-item[aria-pressed="true"] { background: var(--paper-raised); }
+.topic-item[aria-pressed="true"] .topic-item__num { color: var(--turquoise-deep); }
+.topic-item[aria-pressed="true"] .topic-item__title { font-weight: 600; }
+
+.card { background: var(--paper-raised); border: 1px solid var(--line); border-radius: var(--radius-m); padding: var(--space-3); margin-bottom: var(--space-3); position: relative; }
+.card--accent { border-left: 4px solid var(--gold); }
+.card--turquoise-accent { border-left: 4px solid var(--turquoise); }
+
+.quiz-progress { display: flex; align-items: center; gap: var(--space-2); margin: var(--space-3) 0; }
+.quiz-progress__track { flex: 1; height: 8px; background: var(--line); border-radius: 4px; overflow: hidden; }
+.quiz-progress__fill { height: 100%; background: var(--turquoise); width: 0%; transition: width 0.25s ease; }
+.quiz-progress__label { font-size: 0.85rem; color: var(--ink-soft); white-space: nowrap; }
+
+.question__prompt { font-family: var(--font-display); font-size: 1.15rem; margin-bottom: var(--space-2); }
+.options { list-style: none; margin: 0; padding: 0; display: grid; gap: 0.6rem; }
+.option {
+  display: block; width: 100%; text-align: left; padding: 0.85rem 1rem; border: 1px solid var(--line);
+  border-radius: var(--radius-s); background: var(--paper); min-height: var(--touch); font-size: 1rem; cursor: pointer;
+}
+.option__letter { display: inline-block; font-family: var(--font-display); color: var(--gold-deep); margin-right: 0.6rem; font-weight: 600; }
+.option[aria-pressed="true"] { border-color: var(--turquoise); background: #E4EFEA; }
+
+.quiz-nav { display: flex; gap: var(--space-2); margin-top: var(--space-3); }
+.quiz-nav .btn { flex: 1; }
+
+.table-scroll { overflow-x: auto; border: 1px solid var(--line); border-radius: var(--radius-m); }
+table.results { border-collapse: collapse; width: 100%; min-width: 800px; font-size: 0.92rem; background: var(--paper-raised); }
+table.results th, table.results td { padding: 0.7rem 0.8rem; border-bottom: 1px solid var(--line); text-align: left; word-break: break-word; }
+
+/* ИСПРАВЛЕНИЕ: Запрещаем перенос слов в заголовках (Group, Full Name и тд) */
+table.results th { 
+  white-space: nowrap; 
+}
+
+table.results thead th { background: var(--ink); color: var(--cream-text); font-family: var(--font-display); font-weight: 600; }
+table.results tbody tr:nth-child(even) { background: var(--paper); }
+table.results tbody tr:last-child td { border-bottom: none; }
+.results-empty { padding: var(--space-4) var(--space-3); text-align: center; color: var(--ink-soft); border: 1px dashed var(--line); border-radius: var(--radius-m); }
+
+.score-row { display: flex; gap: var(--space-2); flex-wrap: wrap; margin: var(--space-3) 0; }
+.score-chip { flex: 1 1 120px; background: var(--ink); color: var(--cream-text); border-radius: var(--radius-m); padding: var(--space-2); }
+.score-chip__value { font-family: var(--font-display); font-size: 1.7rem; color: var(--gold); display: block; }
+.score-chip__label { font-size: 0.8rem; color: #CBB69A; }
+
+.stack { display: flex; flex-direction: column; gap: var(--space-2); }
+.mt-0 { margin-top: 0; }
+.text-muted { color: var(--ink-soft); }
+.divider { border: none; border-top: 1px solid var(--line); margin: var(--space-3) 0; }
+.footer-note { text-align: center; font-size: 0.8rem; color: var(--ink-soft); margin-top: var(--space-4); }
+
+/* Print Report Styles */
+#printReport { display: none; }
+.print-essay-section { margin-top: 2rem; border-top: 2px solid var(--line); padding-top: 1rem; }
+.print-essay-item { margin-bottom: 2rem; }
+.print-essay-item h4 { margin-bottom: 0.2rem; }
+.print-essay-text { white-space: pre-wrap; margin-top: 0.8rem; font-family: var(--font-body); padding: 1rem; background: #f9f9f9; border-left: 3px solid #ccc; }
+
+/* Print PDF Media Query */
+@media print {
+  .site-header, .no-print, .context-bar { display: none !important; }
+  body { background: #fff; color: #000; font-size: 12pt; }
+  .shell { padding: 0; max-width: 100%; }
+  
+  /* Если печатаем конкретного студента - прячем основную таблицу и показываем детальный отчет */
+  body.printing-student #resultsTableWrap { display: none !important; }
+  body.printing-student #printReport { display: block !important; }
+  
+  .table-scroll { overflow: visible !important; border: none; }
+  table.results { min-width: 100%; border: 1px solid #000; }
+  table.results th, table.results td { border: 1px solid #ccc; white-space: normal; word-break: normal; }
+  table.results thead th { background: #eee !important; color: #000 !important; -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+}

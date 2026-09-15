@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Results — History of Kazakhstan</title>
+<link rel="stylesheet" href="style.css">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Spectral:wght@500;600;700&family=IBM+Plex+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+</head>
+<body>
+
+<header class="site-header">
+  <div class="site-header__inner">
+    <p class="site-header__course">History of Kazakhstan</p>
+    <h1>Student results</h1>
+    <p class="site-header__sub">Essay and quiz scores saved on this device.</p>
+  </div>
+</header>
+
+<main class="shell">
+
+  <!-- Filter section for teacher -->
+  <div class="results-controls no-print" id="resultsControls" hidden>
+    <section class="field" style="max-width: 400px;">
+      <label for="studentFilter">Filter by student to download individual reports</label>
+      <select id="studentFilter" class="form-select">
+        <option value="ALL">All students</option>
+      </select>
+    </section>
+  </div>
+
+  <div class="results-empty" id="resultsEmpty" hidden>
+    <p>No results saved yet on this device.</p>
+    <a class="btn btn--primary" href="index.html">Start a topic</a>
+  </div>
+
+  <!-- Main table view -->
+  <div id="resultsTableWrap" hidden>
+    <div class="table-scroll">
+      <table class="results">
+        <thead>
+          <tr>
+            <th scope="col">Full name</th>
+            <th scope="col">Group</th>
+            <th scope="col">Topic</th>
+            <th scope="col">Essay score</th>
+            <th scope="col">Quiz score</th>
+            <th scope="col">Total average</th>
+          </tr>
+        </thead>
+        <tbody id="resultsTableBody"></tbody>
+      </table>
+    </div>
+
+    <div class="btn-row btn-row--pair no-print">
+      <button type="button" class="btn btn--primary" id="printBtn">Download PDF report</button>
+      <button type="button" class="btn btn--secondary" id="csvBtn">Export as CSV</button>
+    </div>
+    <p class="field__hint no-print">"Download PDF report" opens your browser's print dialog — choose "Save as PDF" as the destination. Selecting a specific student above will include their full essay texts in the PDF.</p>
+
+    <button type="button" class="btn btn--ghost no-print" id="clearResultsBtn">Clear all results on this device</button>
+  </div>
+
+  <!-- Hidden container used for generating detailed student PDF report -->
+  <div id="printReport" class="print-only"></div>
+
+  <hr class="divider no-print">
+  <p class="footer-note no-print"><a href="index.html">Back to topics</a></p>
+
+</main>
+
+<script src="data.js"></script>
+<script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Write your essay — History of Kazakhstan</title>
+<link rel="stylesheet" href="style.css">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Spectral:wght@500;600;700&family=IBM+Plex+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+</head>
+<body>
+
+<header class="site-header">
+  <div class="site-header__inner">
+    <p class="site-header__course">History of Kazakhstan</p>
+    <h1>Write your essay</h1>
+    <p class="site-header__sub">Respond to your chosen topic in your own words, then check and save your work.</p>
+  </div>
+</header>
+
+<main class="shell">
+
+  <dl class="context-bar" id="contextBar"></dl>
+
+  <section class="field">
+    <label for="essayText">Essay</label>
+    <textarea id="essayText" placeholder="Write your essay here..." aria-describedby="wordCount"></textarea>
+    <p class="field__count" id="wordCount">0 words</p>
+  </section>
+
+  <div class="btn-row btn-row--pair">
+    <button type="button" class="btn btn--secondary" id="detectBtn">Check with AI detector</button>
+    <button type="button" class="btn btn--primary" id="saveEssayBtn">Save essay result</button>
+  </div>
+
+  <p class="field__hint" id="essaySavedNote" hidden>Saved to this device.</p>
+
+  <div id="detectorResult" class="card card--turquoise-accent" hidden></div>
+
+  <hr class="divider">
+  <div class="btn-row btn-row--pair">
+    <a class="btn btn--ghost" href="index.html">Back to topics</a>
+    <a class="btn btn--turquoise" href="quiz.html">Continue to quiz</a>
+  </div>
+
+</main>
+
+<script src="data.js"></script>
+<script src="script.js"></script>
+</body>
+</html>

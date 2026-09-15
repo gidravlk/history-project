@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Quiz — History of Kazakhstan</title>
+<link rel="stylesheet" href="style.css">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Spectral:wght@500;600;700&family=IBM+Plex+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+</head>
+<body>
+
+<header class="site-header">
+  <div class="site-header__inner">
+    <p class="site-header__course">History of Kazakhstan</p>
+    <h1>Topic quiz</h1>
+    <p class="site-header__sub">30 questions on your chosen topic. Pick one answer per question.</p>
+  </div>
+</header>
+
+<main class="shell">
+
+  <dl class="context-bar" id="contextBar"></dl>
+
+  <div id="quizContainer">
+    <!-- Active Quiz State -->
+    <div id="quizBody">
+      <div class="quiz-progress">
+        <div class="quiz-progress__track"><div class="quiz-progress__fill" id="progressFill"></div></div>
+        <span class="quiz-progress__label" id="progressLabel"></span>
+      </div>
+
+      <p class="question__prompt" id="questionPrompt"></p>
+      <ul class="options" id="optionsList"></ul>
+
+      <div class="quiz-nav">
+        <button type="button" class="btn btn--secondary" id="prevBtn">Back</button>
+        <button type="button" class="btn btn--primary" id="nextBtn">Next</button>
+        <button type="button" class="btn btn--turquoise" id="finishBtn" hidden>Finish quiz</button>
+      </div>
+    </div>
+
+    <!-- Empty State / Topic Switcher -->
+    <div id="quizEmptyState" class="card card--accent" hidden>
+      <h2>Quiz not ready</h2>
+      <p>Questions for your currently selected topic have not been prepared yet. Your essay is safely saved. Please select a different topic with prepared questions to continue testing.</p>
+      
+      <section class="field">
+        <label for="changeTopicSelect">Available topics</label>
+        <select id="changeTopicSelect" class="form-select"></select>
+      </section>
+      
+      <button type="button" class="btn btn--primary" id="changeTopicBtn">Switch topic & start quiz</button>
+    </div>
+
+    <!-- Score Screen -->
+    <div id="scoreScreen" hidden></div>
+  </div>
+
+</main>
+
+<script src="data.js"></script>
+<script src="script.js"></script>
+</body>
+</html>

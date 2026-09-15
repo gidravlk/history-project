@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>History of Kazakhstan — Course Companion</title>
+<link rel="stylesheet" href="style.css">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Spectral:wght@500;600;700&family=IBM+Plex+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+</head>
+<body>
+
+<header class="site-header">
+  <div class="site-header__inner">
+    <p class="site-header__course">History of Kazakhstan</p>
+    <h1>Course companion</h1>
+    <p class="site-header__sub">Enter your name and group, pick a topic from the course, then write your essay and take the quiz.</p>
+    <svg class="horizon" viewBox="0 0 640 28" preserveAspectRatio="none" role="presentation" aria-hidden="true">
+      <polyline points="0,24 60,24 90,10 130,24 200,24 240,6 280,24 360,24 400,14 450,24 520,24 560,8 600,24 640,24"
+                fill="none" stroke="#A8781E" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"/>
+    </svg>
+  </div>
+</header>
+
+<main class="shell">
+
+  <div class="field-group">
+    <section class="field" aria-labelledby="nameLabel">
+      <label id="nameLabel" for="fullName">Full name</label>
+      <input type="text" id="fullName" name="fullName" autocomplete="name" placeholder="e.g. Aigerim Bekova">
+    </section>
+    
+    <section class="field" aria-labelledby="groupLabel">
+      <label id="groupLabel" for="studentGroup">Group</label>
+      <input type="text" id="studentGroup" name="studentGroup" placeholder="e.g. CS-201">
+    </section>
+  </div>
+  <p class="field__hint mt-0">Saved on this device so you can return to your essay and quiz later.</p>
+
+  <hr class="divider">
+
+  <h2>Choose a topic</h2>
+  <p class="text-muted">17 topics, in course order. Tap one to select it, or let the site pick for you.</p>
+
+  <ol class="topic-list" id="topicList" aria-label="Course topics"></ol>
+
+  <div class="btn-row btn-row--pair">
+    <button type="button" class="btn btn--primary" id="selectManualBtn">Use selected topic</button>
+    <button type="button" class="btn btn--secondary" id="randomTopicBtn">Random topic</button>
+  </div>
+
+  <p class="footer-note"><a href="results.html">View saved student results</a></p>
+
+</main>
+
+<script src="data.js"></script>
+<script src="script.js"></script>
+</body>
+</html>
